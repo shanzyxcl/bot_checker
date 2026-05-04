@@ -420,9 +420,9 @@ def main():
     """Main function"""
     print("🚀 Starting WA Checker Bot...")
     
-    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
+    if BOT_TOKEN == "8653639919:AAERxTC-3ribnM5imbQofU3M0Y2TkOfvJhk":
         print("❌ ERROR: Set BOT_TOKEN dulu!")
-        print("   Set via environment variable: export BOT_TOKEN='your_token'")
+        print("   Set via environment variable: export BOT_TOKEN='8653639919:AAERxTC-3ribnM5imbQofU3M0Y2TkOfvJhk'")
         print("   Atau edit langsung di script")
         return
     
