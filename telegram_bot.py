@@ -10,7 +10,7 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import Application, CommandHandler, MessageHandler, filters, ContextTypes
 
 # Config - GANTI TOKEN BOT LU DISINI
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+BOT_TOKEN = os.environ.get("BOT_TOKEN", "8653639919:AAERxTC-3ribnM5imbQofU3M0Y2TkOfvJhk")
 
 def format_phone_number(phone: str, default_country_code: str = None) -> str:
     """Format nomor telepon ke format internasional
