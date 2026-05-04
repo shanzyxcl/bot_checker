@@ -69,7 +69,7 @@ if [ ! -d "auth_info_baileys" ]; then
     echo "Scanning QR Code... (Ctrl+C kalo udah connect)"
     echo ""
     # Test with dummy number to trigger QR
-    node wa_checker.mjs 628123456789
+    node wa_checker.mjs 6285123340326
 fi
 
 echo ""
