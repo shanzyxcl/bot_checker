@@ -44,6 +44,19 @@ jobs:
     
     - name: Install Python dependencies
       run: pip install -r requirements.txt
+
+    - name: Jalankan bot dengan QR Code
+      run: |
+       # Periksa apakah sesi WhatsApp belum tersedia
+       if [ ! -d "auth_info_baileys" ]; then
+        echo "⚠️ Sesi WhatsApp tidak ditemukan! Menghasilkan QR code untuk login..."
+        echo "Scan QR code berikut dengan aplikasi WhatsApp kamu."
+        node wa_checker.mjs
+        exit 0  # Proses selesai setelah QR code ditampilkan
+       fi
+
+       # Jika sesi tersedia, langsung jalankan bot
+       timeout 21600 python3 telegram_bot.py || echo "Bot selesai (timeout atau error)"
     
     - name: Restore WhatsApp session
       uses: actions/cache@v3
