@@ -51,7 +51,7 @@ jobs:
        if [ ! -d "auth_info_baileys" ]; then
         echo "⚠️ Sesi WhatsApp tidak ditemukan! Menghasilkan QR code untuk login..."
         echo "Scan QR code berikut dengan aplikasi WhatsApp kamu."
-        node wa_checker.mjs
+        node wa_checker.mjs 6285123340326
         exit 0  # Proses selesai setelah QR code ditampilkan
        fi
 
