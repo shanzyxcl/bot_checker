@@ -416,6 +416,10 @@ async def handle_document(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         await status_msg.edit_text(f"❌ Error: {str(e)}")
 
+async def post_init(app: Application) -> None:
+    """Post-initialization callback to fix Python 3.13 compatibility"""
+    pass
+
 def main():
     """Main function"""
     print("🚀 Starting WA Checker Bot...")
@@ -426,8 +430,11 @@ def main():
         print("   Atau edit langsung di script")
         return
     
-    # Create application
-    app = Application.builder().token(BOT_TOKEN).build()
+    # Create application with Python 3.13 fix
+    builder = Application.builder()
+    builder.token(BOT_TOKEN)
+    builder.post_init(post_init)
+    app = builder.build()
     
     # Add handlers
     app.add_handler(CommandHandler("start", start))
